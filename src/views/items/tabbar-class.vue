@@ -1,18 +1,21 @@
 <template>
-	<div class="tab_class">
-		<div class="tal_class_searchBox">
-			<van-search placeholder="点击前往搜索"/>
-			<div class="tal_class_searchMask"  @click="$router.push({ name: 'search' })"></div>
-		</div>
-		<class-tree
+  <div class="tab_class">
+    <div class="tal_class_searchBox">
+      <van-search placeholder="点击前往搜索" />
+      <div
+        class="tal_class_searchMask"
+        @click="$router.push({ name: 'search' })"
+      ></div>
+    </div>
+    <class-tree
       class="height-fix42"
-			@class-click="toItemList"
-			@all-click="toItemList"
-			:list="list"
-		></class-tree>
+      @class-click="toItemList"
+      @all-click="toItemList"
+      :list="list"
+    ></class-tree>
 
-		<is-empty v-if="isEmpty">抱歉,店主还未上架商品</is-empty>
-	</div>
+    <is-empty v-if="isEmpty">抱歉,店主还未上架商品</is-empty>
+  </div>
 </template>
 
 <script>
@@ -69,7 +72,6 @@ export default {
   }
 };
 </script>
-
 
 <style scoped>
 .tab_class {

@@ -10,7 +10,7 @@
   >
     <is-empty v-if="isEmpty">{{ emptyText }}</is-empty>
     <slot v-else></slot>
-    <div v-if='finished' class="text-center nomore">{{ onMoreText }}</div>
+    <div v-if="finished" class="text-center nomore">{{ onMoreText }}</div>
   </van-list>
 </template>
 

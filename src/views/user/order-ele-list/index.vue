@@ -1,14 +1,14 @@
 <template>
-	<div class="order_list no-pad-bottom over-hide">
-		<van-tabs
-			v-model="activeIndex"
-			:swipe-threshold="5"
-			 @click="handleTabClick"
-		>
-			<van-tab
-				v-for="(tab, tabIndex) in tabsItem"
-			 	:title="tab.name"
-				:key="tab.type"
+  <div class="order_list no-pad-bottom over-hide">
+    <van-tabs
+      v-model="activeIndex"
+      :swipe-threshold="5"
+      @click="handleTabClick"
+    >
+      <van-tab
+        v-for="(tab, tabIndex) in tabsItem"
+        :title="tab.name"
+        :key="tab.type"
       >
         <InfinityScroll
           class="full-page scroll-wrap height-fix42"
@@ -35,7 +35,9 @@
                 :thumb="goods.pic_url"
               />
               <div class="order_list--total">
-                合计: {{el.total_fee | yuan}}（含运费{{el.post_fee | yuan}}）
+                合计: {{ el.total_fee | yuan }}（含运费{{
+                  el.post_fee | yuan
+                }}）
               </div>
             </div>
             <component
@@ -47,9 +49,9 @@
             />
           </van-panel>
         </InfinityScroll>
-			</van-tab>
-		</van-tabs>
-	</div>
+      </van-tab>
+    </van-tabs>
+  </div>
 </template>
 
 <script>

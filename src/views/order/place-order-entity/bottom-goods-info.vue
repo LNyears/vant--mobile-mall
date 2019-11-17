@@ -1,36 +1,36 @@
 <template>
-	<div class="order-goods">
-		<van-card
-			v-for="item in goods"
-			:key="item.id"
-			:title="item.title"
-			:desc="item.desc"
-			:num="item.num"
-			price="2.00"
-			:thumb="item.thumb"
-		>
-			<div slot="footer">
-				生成日期 2017-10-26
-			</div>
-		</van-card>
+  <div class="order-goods">
+    <van-card
+      v-for="item in goods"
+      :key="item.id"
+      :title="item.title"
+      :desc="item.desc"
+      :num="item.num"
+      price="2.00"
+      :thumb="item.thumb"
+    >
+      <div slot="footer">
+        生成日期 2017-10-26
+      </div>
+    </van-card>
 
-		<van-cell-group>
-			<van-field v-model="remark" placeholder="请输入备注" label="订单备注">
-				<template slot="icon">
-					3/50
-				</template>
-			</van-field>
+    <van-cell-group>
+      <van-field v-model="remark" placeholder="请输入备注" label="订单备注">
+        <template slot="icon">
+          3/50
+        </template>
+      </van-field>
 
-			<van-cell title="商品金额">
-				<span class="red">{{720096 | yuan}}</span>
-			</van-cell>
-			<van-cell title="邮费" value="¥8.96"></van-cell>
-			<van-cell title="税费" value="¥8.96"></van-cell>
-			<van-cell title="多件随机优惠">
-				<span class="red">{{1000 | yuan}}</span>
-			</van-cell>
-		</van-cell-group>
-	</div>
+      <van-cell title="商品金额">
+        <span class="red">{{ 720096 | yuan }}</span>
+      </van-cell>
+      <van-cell title="邮费" value="¥8.96"></van-cell>
+      <van-cell title="税费" value="¥8.96"></van-cell>
+      <van-cell title="多件随机优惠">
+        <span class="red">{{ 1000 | yuan }}</span>
+      </van-cell>
+    </van-cell-group>
+  </div>
 </template>
 
 <script>

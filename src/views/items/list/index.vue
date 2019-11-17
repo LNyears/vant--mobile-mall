@@ -1,20 +1,15 @@
 <template>
-	<div class="item_list over-hide">
+  <div class="item_list over-hide">
+    <form action="/search">
+      <van-search placeholder="请输入商品名称" v-model="searchVal" showAction />
+    </form>
 
-		<form action="/search">
-			<van-search
-        placeholder="请输入商品名称"
-        v-model="searchVal"
-        showAction 
-      />
-		</form>
-
-		<van-tabs v-model="tabActive" @disabled="toggleFilterModal(true)">
-			<van-tab
-				v-for="(tab, tabIndex)  in tabsItem"
-			 	:title="tab.name"
-				:key="tab.type"
-				:disabled="tab.sort === false"
+    <van-tabs v-model="tabActive" @disabled="toggleFilterModal(true)">
+      <van-tab
+        v-for="(tab, tabIndex) in tabsItem"
+        :title="tab.name"
+        :key="tab.type"
+        :disabled="tab.sort === false"
       >
         <InfinityScroll
           :ref="'tabScrolls' + tabIndex"
@@ -32,28 +27,24 @@
             />
           </item-group>
         </InfinityScroll>
-			</van-tab>
-		</van-tabs>
+      </van-tab>
+    </van-tabs>
 
-		<van-popup
-			class="filterItem"
-			v-model="filterItemShow"
-			position="right"
-		>
-			<ul>
-				<li
-					v-for="(li, i) in filterItem"
-					:key="i"
-					@click="filterMethod(i)"
-					:class="{filter_active: li.isActive}"
+    <van-popup class="filterItem" v-model="filterItemShow" position="right">
+      <ul>
+        <li
+          v-for="(li, i) in filterItem"
+          :key="i"
+          @click="filterMethod(i)"
+          :class="{ filter_active: li.isActive }"
         >
-						{{li.name}}
-					<van-icon name="success" v-show="li.isActive" class="float-r" />
-				</li>
-			</ul>
-		</van-popup>
+          {{ li.name }}
+          <van-icon name="success" v-show="li.isActive" class="float-r" />
+        </li>
+      </ul>
+    </van-popup>
 
-		<!-- <transition name="fade">
+    <!-- <transition name="fade">
 			<van-icon
 				name="arrowupcircle"
 				class="backTop"
@@ -61,7 +52,7 @@
 				v-show="showArrow"
 			/>
 		</transition> -->
-	</div>
+  </div>
 </template>
 
 <script>

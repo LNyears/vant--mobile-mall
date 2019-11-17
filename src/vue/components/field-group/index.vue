@@ -1,9 +1,8 @@
 <template>
-	<div class="field_group">
-		<slot></slot>
-	</div>
+  <div class="field_group">
+    <slot></slot>
+  </div>
 </template>
-
 
 <script>
 export default {

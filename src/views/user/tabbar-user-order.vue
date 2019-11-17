@@ -1,39 +1,52 @@
 <template>
-	<div>
-		<van-cell-group>
-			<van-cell title="我的订单" isLink>
-				<router-link to="/user/order/list/0" class="text-desc">全部订单</router-link>
-			</van-cell>
-		</van-cell-group>
+  <div>
+    <van-cell-group>
+      <van-cell title="我的订单" isLink>
+        <router-link to="/user/order/list/0" class="text-desc"
+          >全部订单</router-link
+        >
+      </van-cell>
+    </van-cell-group>
 
-		<van-row class="order_status">
-			<van-col span="6">
-				<div class="order_status_icon" @click="$router.push({path: '/user/order/list/1'})">
-					<van-icon name="daifukuan" />
-				</div>
-				<div>待付款</div>
-			</van-col>
-			<van-col span="6">
-				<div class="order_status_icon" @click="$router.push({path: '/user/order/list/2'})">
-					<van-icon name="daifahuo" info="1" />
-				</div>
-				<div>待发货</div>
-			</van-col>
-			<van-col span="6">
-				<div class="order_status_icon" @click="$router.push({path: '/user/order/list/3'})">
-					<van-icon name="wuliu" info="3" />
-				</div>
-				<div>待收货</div>
-			</van-col>
-			<van-col span="6">
-				<div class="order_status_icon" @click="$router.push({path: '/user/refund/list'})">
-					<van-icon name="shouhouguanli" />
-				</div>
-				<div>退款售后</div>
-			</van-col>
-		</van-row>
-
-	</div>
+    <van-row class="order_status">
+      <van-col span="6">
+        <div
+          class="order_status_icon"
+          @click="$router.push({ path: '/user/order/list/1' })"
+        >
+          <van-icon name="daifukuan" />
+        </div>
+        <div>待付款</div>
+      </van-col>
+      <van-col span="6">
+        <div
+          class="order_status_icon"
+          @click="$router.push({ path: '/user/order/list/2' })"
+        >
+          <van-icon name="daifahuo" info="1" />
+        </div>
+        <div>待发货</div>
+      </van-col>
+      <van-col span="6">
+        <div
+          class="order_status_icon"
+          @click="$router.push({ path: '/user/order/list/3' })"
+        >
+          <van-icon name="wuliu" info="3" />
+        </div>
+        <div>待收货</div>
+      </van-col>
+      <van-col span="6">
+        <div
+          class="order_status_icon"
+          @click="$router.push({ path: '/user/refund/list' })"
+        >
+          <van-icon name="shouhouguanli" />
+        </div>
+        <div>退款售后</div>
+      </van-col>
+    </van-row>
+  </div>
 </template>
 
 <script>
@@ -48,7 +61,6 @@ export default {
   }
 };
 </script>
-
 
 <style scoped lang="scss">
 @import '../../assets/scss/mixin';

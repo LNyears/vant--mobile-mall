@@ -1,13 +1,9 @@
 <template>
   <div class="order_list over-hide">
-    <van-tabs 
-      v-model="activeIndex" 
-      :swipe-threshold="5" 
-      click="handleTabClick"
-    >
-      <van-tab 
-        v-for="(tab, tabIndex) in tabsItem" 
-        :title="tab.name" 
+    <van-tabs v-model="activeIndex" :swipe-threshold="5" click="handleTabClick">
+      <van-tab
+        v-for="(tab, tabIndex) in tabsItem"
+        :title="tab.name"
         :key="tab.type"
       >
         <InfinityScroll
@@ -35,7 +31,11 @@
                 :thumb="goods.pic_url"
                 @click.native="toOrderDetail(i)"
               />
-              <div class="order_list--total">合计: {{el.total_fee | yuan}}（含运费{{el.post_fee | yuan}}）</div>
+              <div class="order_list--total">
+                合计: {{ el.total_fee | yuan }}（含运费{{
+                  el.post_fee | yuan
+                }}）
+              </div>
             </div>
             <component
               slot="footer"

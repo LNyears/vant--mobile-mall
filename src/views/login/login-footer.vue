@@ -1,5 +1,5 @@
 <template>
-	<div class="text-desc text-center bottom_positon">技术支持: xxxxxx</div>
+  <div class="text-desc text-center bottom_positon">技术支持: xxxxxx</div>
 </template>
 
 <script>
@@ -7,7 +7,6 @@ export default {
   name: 'login-footer'
 };
 </script>
-
 
 <style scoped>
 .bottom_positon {

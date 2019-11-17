@@ -1,41 +1,44 @@
 <template>
-	<div class="place_order_virtual">
-		<van-panel>
-			<van-card
-				slot="header"
-				:title="goods.title"
-				:desc="goods.desc"
-				num="2"
-				price="2.00"
-				:thumb="goods.thumb"
-			/>
+  <div class="place_order_virtual">
+    <van-panel>
+      <van-card
+        slot="header"
+        :title="goods.title"
+        :desc="goods.desc"
+        num="2"
+        price="2.00"
+        :thumb="goods.thumb"
+      />
 
-			<div class="panel_content">
-				<van-icon :name="showNotice ? 'arrow-up' : 'arrow-down'" class="panel_notice" />
-				<div @click="showNotice = !showNotice">注意事项</div>
-					<ol v-if="showNotice">
-						<li>注意事项1</li>
-						<li>注意事项2</li>
-						<li>注意事项3</li>
-						<li>注意事项4</li>
-					</ol>
-			</div>
+      <div class="panel_content">
+        <van-icon
+          :name="showNotice ? 'arrow-up' : 'arrow-down'"
+          class="panel_notice"
+        />
+        <div @click="showNotice = !showNotice">注意事项</div>
+        <ol v-if="showNotice">
+          <li>注意事项1</li>
+          <li>注意事项2</li>
+          <li>注意事项3</li>
+          <li>注意事项4</li>
+        </ol>
+      </div>
 
-			<div slot="footer" class="clearfix">
-				<div class="float-l">商品金额</div>
-				<div class="float-r red">{{7200 | yuan}}</div>
-			</div>
-		</van-panel>
+      <div slot="footer" class="clearfix">
+        <div class="float-l">商品金额</div>
+        <div class="float-r red">{{ 7200 | yuan }}</div>
+      </div>
+    </van-panel>
 
-		<van-submit-bar
-			:price="3050"
-			label="总计："
-			buttonText="提交订单"
-			:loading="isSubmit"
-			:disabled="isDisabled"
-			@submit="onSubmit"
-		/>
-	</div>
+    <van-submit-bar
+      :price="3050"
+      label="总计："
+      buttonText="提交订单"
+      :loading="isSubmit"
+      :disabled="isDisabled"
+      @submit="onSubmit"
+    />
+  </div>
 </template>
 
 <script>

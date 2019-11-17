@@ -1,46 +1,41 @@
 <template>
-	<div class="user_collect">
+  <div class="user_collect">
+    <form action="/search" class="fixedTop">
+      <van-search placeholder="请输入商品名称" v-model="searchVal" />
+    </form>
 
-		<form action="/search" class="fixedTop">
-			<van-search
-			placeholder="请输入商品名称"
-			v-model="searchVal"
-			 />
-		</form>
+    <van-list
+      v-model="loading"
+      :finished="finished"
+      :immediate-check="false"
+      :offset="100"
+      @load="loadMore"
+    >
+      <item-group>
+        <item-card-hori
+          v-for="(item, i) in items"
+          :style="{ backgroundColor: !item.goods_status && '#fcfcfc' }"
+          :key="i"
+          :goods="item"
+          @click="itemClick(i)"
+        >
+          <van-icon
+            name="lajitong"
+            slot="footer"
+            @click.stop="cancelCollect($event, i)"
+            style="float: right;"
+          />
+        </item-card-hori>
+      </item-group>
+    </van-list>
 
-		<van-list
-		  	v-model="loading"
-		  	:finished="finished"
-			:immediate-check="false"
-	  		:offset="100"
-		  	@load="loadMore"
-		>
-			<item-group>
-				<item-card-hori
-					v-for="(item, i) in items"
-					:style="{backgroundColor: !item.goods_status && '#fcfcfc'}"
-					:key="i"
-					:goods="item"
-					@click="itemClick(i)"
-				>
-				<van-icon
-					name="lajitong"
-					slot="footer"
-					@click.stop="cancelCollect($event, i)"
-					style="float: right;"
-				/>
-				</item-card-hori>
-			</item-group>
-		</van-list>
+    <is-empty v-if="isEmpty">没有商品收藏</is-empty>
 
-		<is-empty v-if="isEmpty">没有商品收藏</is-empty>
-
-		<div class="clear_invalid" v-if="items.length" @click="clearInvalid">
-			<van-icon name="lajitong"/>
-			清除失效商品
-		</div>
-
-	</div>
+    <div class="clear_invalid" v-if="items.length" @click="clearInvalid">
+      <van-icon name="lajitong" />
+      清除失效商品
+    </div>
+  </div>
 </template>
 
 <script>

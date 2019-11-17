@@ -1,12 +1,18 @@
 <template>
-	<div class="payment_status">
-		<div class="status_top">
-			<van-icon :name="statusIcon" :class="statusClass" />
-			<div>{{statusText}}</div>
-		</div>
+  <div class="payment_status">
+    <div class="status_top">
+      <van-icon :name="statusIcon" :class="statusClass" />
+      <div>{{ statusText }}</div>
+    </div>
 
-		<div class="status_text"><span class="red">3秒</span>后返回到登录页, 您也可以<router-link to="/login" class="red">点此登录</router-link></div>
-	</div>
+    <div class="status_text">
+      <span class="red">3秒</span>后返回到登录页, 您也可以<router-link
+        to="/login"
+        class="red"
+        >点此登录</router-link
+      >
+    </div>
+  </div>
 </template>
 
 <script>
@@ -40,7 +46,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scopd>
 .payment_status {

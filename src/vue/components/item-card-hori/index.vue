@@ -1,42 +1,45 @@
 <template>
-	<div class="item_card_H_wrap one_border" @click="OnClick">
-		<div class="clearfix">
-			<div class="item_card_image float-l">
-				<div v-if="$slots.leftTopIcon" class="leftTopIcon">
-					<slot name="leftTopIcon"></slot>
-				</div>
+  <div class="item_card_H_wrap one_border" @click="OnClick">
+    <div class="clearfix">
+      <div class="item_card_image float-l">
+        <div v-if="$slots.leftTopIcon" class="leftTopIcon">
+          <slot name="leftTopIcon"></slot>
+        </div>
 
-				<div v-if="$slots.mask" class="item_img_mask">
-					<slot name="mask"></slot>
-				</div>
-				<img v-lazy="goods.pic_url">
-				<div class="item_image_desc">{{goodsStatusToMe}}</div>
-			</div>
+        <div v-if="$slots.mask" class="item_img_mask">
+          <slot name="mask"></slot>
+        </div>
+        <img v-lazy="goods.pic_url" />
+        <div class="item_image_desc">{{ goodsStatusToMe }}</div>
+      </div>
 
-			<div class="item_card_info">
-				<div class="item_card_name">
-					<van-tag plain type="danger" v-if="goods.is_haitao">海淘</van-tag>
-					<span v-if="$slots.icon" class="item_card_icon"><slot name="icon"></slot></span>
-					{{goods.name}}
-				</div>
+      <div class="item_card_info">
+        <div class="item_card_name">
+          <van-tag plain type="danger" v-if="goods.is_haitao">海淘</van-tag>
+          <span v-if="$slots.icon" class="item_card_icon"
+            ><slot name="icon"></slot
+          ></span>
+          {{ goods.name }}
+        </div>
 
-				<div class="item_card_info_desc">{{goods.sell_point}}</div>
+        <div class="item_card_info_desc">{{ goods.sell_point }}</div>
 
-				<div class="item_card_footer">
-					<div class="footer_price">
-						<span>{{goods.sales_price | yuan}}</span>
-						<span class="marketPrice" v-if="goods.market_price">{{goods.market_price | yuan}}</span>
-					</div>
+        <div class="item_card_footer">
+          <div class="footer_price">
+            <span>{{ goods.sales_price | yuan }}</span>
+            <span class="marketPrice" v-if="goods.market_price">{{
+              goods.market_price | yuan
+            }}</span>
+          </div>
 
-					<div class="footer_desc" v-if="$slots.footer">
-						<slot name="footer"></slot>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+          <div class="footer_desc" v-if="$slots.footer">
+            <slot name="footer"></slot>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
-
 
 <script>
 import item_mix from '@/vue/mixin/item-card';

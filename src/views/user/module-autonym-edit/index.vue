@@ -1,38 +1,41 @@
 <template>
-	<div>
-		<van-cell-group>
-			<van-field
-				v-model="field.username"
-				label="姓名"
-				placeholder="请输入姓名"
-				required
-				:error="nameErr"
-				@blur="checkUserName"
-				@focus="nameErr = false"/>
+  <div>
+    <van-cell-group>
+      <van-field
+        v-model="field.username"
+        label="姓名"
+        placeholder="请输入姓名"
+        required
+        :error="nameErr"
+        @blur="checkUserName"
+        @focus="nameErr = false"
+      />
 
-			<van-field
-				v-model="field.idCard"
-				label="身份证号"
-				placeholder="请输入身份证号码"
-				required
-				:error="idCardErr"
-				@blur="checkIdCard"
-				@focus="idCardErr = false"/>
-		</van-cell-group>
+      <van-field
+        v-model="field.idCard"
+        label="身份证号"
+        placeholder="请输入身份证号码"
+        required
+        :error="idCardErr"
+        @blur="checkIdCard"
+        @focus="idCardErr = false"
+      />
+    </van-cell-group>
 
-		<id-card-upload
-			:front.sync="field.frontUrl"
-			:reverse.sync="field.reverseUrl"/>
+    <id-card-upload
+      :front.sync="field.frontUrl"
+      :reverse.sync="field.reverseUrl"
+    />
 
-		<div class="save_div">
-			<van-button type="danger" size="large" @click="save">保存</van-button>
-		</div>
+    <div class="save_div">
+      <van-button type="danger" size="large" @click="save">保存</van-button>
+    </div>
 
-		<ul class="text-desc">
-			<li>根据海关规定: 购买跨境商品需要办理相关手续.</li>
-			<li>根据海关规定: 购买跨境商品需要办理相关手续.</li>
-		</ul>
-	</div>
+    <ul class="text-desc">
+      <li>根据海关规定: 购买跨境商品需要办理相关手续.</li>
+      <li>根据海关规定: 购买跨境商品需要办理相关手续.</li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -95,7 +98,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .save_div {

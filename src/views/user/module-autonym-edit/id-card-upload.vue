@@ -1,45 +1,54 @@
 <template>
-	<div class="id_card_upload">
-		<div>身份证照片</div>
-		<van-row class="upload_hint text-desc">
-			<van-icon name="hint"/>
-			温馨提示: 请上传原始比例的身份证正反面, 请勿剪裁涂改,保证身份证信息清晰显示, 否则无法通过审核
-		</van-row>
-		<van-row gutter="20" class="id_card_row upload_box">
-			<van-col span=12>
-				<div class="upload_wrap">
-					<div v-if="frontUrl">
-						<img :src="frontUrl" alt="反面">
-					</div>
-					<div class="add_btn" v-else>
-						<van-icon name="add" />
-						<div>上传照片</div>
-					</div>
-				</div>
-			</van-col>
-			<van-col span=12>
-				<div class="upload_wrap">
-					<div v-if="reverseUrl">
-						<img :src="reverseUrl" alt="反面">
-					</div>
-					<div class="add_btn" v-else>
-						<van-icon name="add" />
-						<div>上传照片</div>
-					</div>
-				</div>
-			</van-col>
-		</van-row>
-		<van-row gutter="10" class="id_card_row">
-			<van-col span=12>
-				<div class="text-desc">正面示例</div>
-				<img src="../../../assets/images/id_card_front.png" alt="正面" width="50%">
-			</van-col>
-			<van-col span=12>
-				<div class="text-desc">反面示例</div>
-				<img src="../../../assets/images/id_card_reverse.png" alt="反面" width="50%">
-			</van-col>
-		</van-row>
-	</div>
+  <div class="id_card_upload">
+    <div>身份证照片</div>
+    <van-row class="upload_hint text-desc">
+      <van-icon name="hint" />
+      温馨提示: 请上传原始比例的身份证正反面,
+      请勿剪裁涂改,保证身份证信息清晰显示, 否则无法通过审核
+    </van-row>
+    <van-row gutter="20" class="id_card_row upload_box">
+      <van-col span="12">
+        <div class="upload_wrap">
+          <div v-if="frontUrl">
+            <img :src="frontUrl" alt="反面" />
+          </div>
+          <div class="add_btn" v-else>
+            <van-icon name="add" />
+            <div>上传照片</div>
+          </div>
+        </div>
+      </van-col>
+      <van-col span="12">
+        <div class="upload_wrap">
+          <div v-if="reverseUrl">
+            <img :src="reverseUrl" alt="反面" />
+          </div>
+          <div class="add_btn" v-else>
+            <van-icon name="add" />
+            <div>上传照片</div>
+          </div>
+        </div>
+      </van-col>
+    </van-row>
+    <van-row gutter="10" class="id_card_row">
+      <van-col span="12">
+        <div class="text-desc">正面示例</div>
+        <img
+          src="../../../assets/images/id_card_front.png"
+          alt="正面"
+          width="50%"
+        />
+      </van-col>
+      <van-col span="12">
+        <div class="text-desc">反面示例</div>
+        <img
+          src="../../../assets/images/id_card_reverse.png"
+          alt="反面"
+          width="50%"
+        />
+      </van-col>
+    </van-row>
+  </div>
 </template>
 
 <script>
@@ -59,7 +68,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .id_card_upload {

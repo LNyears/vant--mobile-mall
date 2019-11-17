@@ -1,54 +1,54 @@
 <template>
-	<div class="tab_home">
-		<sign-board
-			v-once
-			v-if="shopInfo"
-			:boardUrl="shopInfo.avatar"
-			:storeName="shopInfo.shop_name"/>
+  <div class="tab_home">
+    <sign-board
+      v-once
+      v-if="shopInfo"
+      :boardUrl="shopInfo.avatar"
+      :storeName="shopInfo.shop_name"
+    />
 
-		<shop-info-group
-			v-once
-			v-if="shopInfo"
-			class="interval_bot"
-			:location="location"
-			:address="shopInfo.address"
-			:notice="shopInfo.notice"
-			:mobile="shopInfo.contact"/>
+    <shop-info-group
+      v-once
+      v-if="shopInfo"
+      class="interval_bot"
+      :location="location"
+      :address="shopInfo.address"
+      :notice="shopInfo.notice"
+      :mobile="shopInfo.contact"
+    />
 
-		<van-list
-		  	v-model="loading"
-		  	class="scroll-load"
-		  	:finished="finished"
-				:immediate-check="false"
-	  		:offset="100"
-		  	@load="loadMore"
-		>
-			<item-group
-				v-for="( group, key ) in itemGroup"
-				v-if="group"
-				:key="key"
-				class="interval_bot"
-				:setting="group.setting"
-			>
-				<component
-					v-for="item in group.items"
-					:goods="item"
-					:key="item.id"
-					:is="getStyle(group.setting.style)"
-					@click="toGoods(item)"
-				>
-					<div slot="mask" v-if="lootAll(item)">
-						<img src="../../assets/images/not_enough.png" alt="已抢光">
-					</div>
-					<div slot="leftTopIcon" v-if="item.as_status < 2">
-						<img :src="mxStatus(item.as_status)" alt="秒杀">
-					</div>
-
-				</component>
-			</item-group>
-		</van-list>
-
-	</div>
+    <van-list
+      v-model="loading"
+      class="scroll-load"
+      :finished="finished"
+      :immediate-check="false"
+      :offset="100"
+      @load="loadMore"
+    >
+      <item-group
+        v-for="(group, key) in itemGroup"
+        v-if="group"
+        :key="key"
+        class="interval_bot"
+        :setting="group.setting"
+      >
+        <component
+          v-for="item in group.items"
+          :goods="item"
+          :key="item.id"
+          :is="getStyle(group.setting.style)"
+          @click="toGoods(item)"
+        >
+          <div slot="mask" v-if="lootAll(item)">
+            <img src="../../assets/images/not_enough.png" alt="已抢光" />
+          </div>
+          <div slot="leftTopIcon" v-if="item.as_status < 2">
+            <img :src="mxStatus(item.as_status)" alt="秒杀" />
+          </div>
+        </component>
+      </item-group>
+    </van-list>
+  </div>
 </template>
 
 <script>
@@ -212,7 +212,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .interval_bot {

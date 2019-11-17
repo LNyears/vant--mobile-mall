@@ -1,14 +1,14 @@
 <template>
   <div class="order_list">
-    <van-tabs 
-      sticky 
-      :active="activeIndex" 
+    <van-tabs
+      sticky
+      :active="activeIndex"
       :swipe-threshold="5"
       @click="handleTabClick"
     >
       <van-tab
-        v-for="(tab, tabIndex) in tabsItem" 
-        :title="tab.name" 
+        v-for="(tab, tabIndex) in tabsItem"
+        :title="tab.name"
         :key="tab.type"
       >
         <InfinityScroll
@@ -34,15 +34,16 @@
                 :price="(el.orderItem.price / 100).toFixed(2)"
                 :thumb="el.orderItem.pic_url"
               />
-              <div
-                class="order_list--total"
-              >合计: {{el.refund_fee | yuan}}（含运费{{el.refund_post_fee | yuan}}）</div>
+              <div class="order_list--total">
+                合计: {{ el.refund_fee | yuan }}（含运费{{
+                  el.refund_post_fee | yuan
+                }}）
+              </div>
             </div>
             <div slot="footer" style="text-align: right;">
-              <van-button
-                size="small"
-                @click="refund_handle(i)"
-              >{{ el.status == 10 ? "撤销申请" : "查看详情"}}</van-button>
+              <van-button size="small" @click="refund_handle(i)">{{
+                el.status == 10 ? '撤销申请' : '查看详情'
+              }}</van-button>
             </div>
           </van-panel>
         </InfinityScroll>

@@ -1,45 +1,55 @@
 <template>
-	<div class="item_cell_group">
-		<van-cell-group>
-			<van-cell title="选择规格" isLink :value="selectSku.selectedSkuComb.sku_str" @click.native="skuClick" />
-			<van-cell title="商品属性" isLink @click.native="propsPopup = true" />
-			<van-cell title="配送至" isLink :value="addressVal.area_name"  @click.native="addressPopup = true" />
-			<van-cell title="运费" :value="postFee | yuan"/>
-		</van-cell-group>
+  <div class="item_cell_group">
+    <van-cell-group>
+      <van-cell
+        title="选择规格"
+        isLink
+        :value="selectSku.selectedSkuComb.sku_str"
+        @click.native="skuClick"
+      />
+      <van-cell title="商品属性" isLink @click.native="propsPopup = true" />
+      <van-cell
+        title="配送至"
+        isLink
+        :value="addressVal.area_name"
+        @click.native="addressPopup = true"
+      />
+      <van-cell title="运费" :value="postFee | yuan" />
+    </van-cell-group>
 
-		<van-sku
-			v-model="showSku"
-			:showAddCartBtn="showAddCartBtn"
-			:buyText="buyText"
-			:sku="skus.sku"
-			:goods="skus.goods_info"
-			:goodsId="goodsInfo.id"
-			:disableStepperInput="true"
-			@buy-clicked="buyGoods"
-		/>
+    <van-sku
+      v-model="showSku"
+      :showAddCartBtn="showAddCartBtn"
+      :buyText="buyText"
+      :sku="skus.sku"
+      :goods="skus.goods_info"
+      :goodsId="goodsInfo.id"
+      :disableStepperInput="true"
+      @buy-clicked="buyGoods"
+    />
 
-		<van-popup v-model="propsPopup"  position="bottom">
-			<popup-props :propsStr="props_str"></popup-props>
-		</van-popup>
+    <van-popup v-model="propsPopup" position="bottom">
+      <popup-props :propsStr="props_str"></popup-props>
+    </van-popup>
 
-		<van-popup v-model="areaPopup" position="bottom">
-			<popup-area
-				v-if="areaPopup"
-				@confirm="emitAddressVal"
-				@cancel="areaPopup = false"
-			/>
-		</van-popup>
+    <van-popup v-model="areaPopup" position="bottom">
+      <popup-area
+        v-if="areaPopup"
+        @confirm="emitAddressVal"
+        @cancel="areaPopup = false"
+      />
+    </van-popup>
 
-		<van-popup v-model="addressPopup" position="bottom">
-			<popup-address
-				:is-show="addressPopup"
-				:addressVal="addressVal"
+    <van-popup v-model="addressPopup" position="bottom">
+      <popup-address
+        :is-show="addressPopup"
+        :addressVal="addressVal"
         :default-id="defaultId"
-				@confirm="emitAddressVal"
-				@area-click="areaClick"
-			/>
-		</van-popup>
-	</div>
+        @confirm="emitAddressVal"
+        @area-click="areaClick"
+      />
+    </van-popup>
+  </div>
 </template>
 
 <script>
@@ -213,5 +223,4 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

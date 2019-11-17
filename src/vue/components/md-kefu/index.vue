@@ -1,14 +1,16 @@
 <template>
-	<div class="contact_popup">
-		<div class="contact_box contact_top">
-			<div>微信长按识别店主二维码</div>
-			<div><img src="../../../assets/images/qc_code.png" alt="店主二维码"></div>
-		</div>
-		<div class="contact_box">
-			<div><van-icon name="phone" /> {{mobile}}</div>
-			<div class="contact_btn"><a :href="'tel:' + mobile">联系店家</a></div>
-		</div>
-	</div>
+  <div class="contact_popup">
+    <div class="contact_box contact_top">
+      <div>微信长按识别店主二维码</div>
+      <div>
+        <img src="../../../assets/images/qc_code.png" alt="店主二维码" />
+      </div>
+    </div>
+    <div class="contact_box">
+      <div><van-icon name="phone" /> {{ mobile }}</div>
+      <div class="contact_btn"><a :href="'tel:' + mobile">联系店家</a></div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -20,7 +22,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .contact_popup {

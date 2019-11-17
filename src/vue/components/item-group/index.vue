@@ -1,43 +1,57 @@
 <template>
-	<div class="items_group">
-		<van-cell-group v-if="setting && !!setting.title">
-			<van-cell>
-				<slot v-if="$slots.title_right" name="title_right"></slot>
-				<template slot="icon">
-					<van-icon class="van-cell__left-icon" v-if="setting.icon" :style="{color: setting.title_color}" :name="setting.icon"/>
-				</template>
-				<template slot="title">
-					<span class="group_title" :style="{color: setting.title_color}">{{setting.title}}</span>
-					<slot name="title-desc">
-						<span class="group_title_desc">{{setting.title_desc}}</span>
-					</slot>
-				</template>
-			</van-cell>
-		</van-cell-group>
+  <div class="items_group">
+    <van-cell-group v-if="setting && !!setting.title">
+      <van-cell>
+        <slot v-if="$slots.title_right" name="title_right"></slot>
+        <template slot="icon">
+          <van-icon
+            class="van-cell__left-icon"
+            v-if="setting.icon"
+            :style="{ color: setting.title_color }"
+            :name="setting.icon"
+          />
+        </template>
+        <template slot="title">
+          <span class="group_title" :style="{ color: setting.title_color }">{{
+            setting.title
+          }}</span>
+          <slot name="title-desc">
+            <span class="group_title_desc">{{ setting.title_desc }}</span>
+          </slot>
+        </template>
+      </van-cell>
+    </van-cell-group>
 
-		<div class="group_banner" v-if="setting && setting.banner">
-			<img v-lazy="setting.banner" alt="海报" width="100%">
-		</div>
+    <div class="group_banner" v-if="setting && setting.banner">
+      <img v-lazy="setting.banner" alt="海报" width="100%" />
+    </div>
 
-		<div class="item_scroll_box" v-if="setting.style">
-			<div class="item_scroll" v-scrollArrow="scrollMore">
-				<div class="item_scroll_wrap" :style="{width: scrollWidth}">
-					<slot></slot>
-				</div>
-			</div>
+    <div class="item_scroll_box" v-if="setting.style">
+      <div class="item_scroll" v-scrollArrow="scrollMore">
+        <div class="item_scroll_wrap" :style="{ width: scrollWidth }">
+          <slot></slot>
+        </div>
+      </div>
 
-			<transition name="fade">
-				<van-icon name="arrow" v-show="leftOver && isShowArrow" class="items_arrow right_arrow" />
-			</transition>
-			<transition name="fade">
-				<van-icon name="arrow-left" v-show="rightOver && isShowArrow" class="items_arrow left_arrow" />
-			</transition>
-		</div>
-		<div v-else>
-			<slot></slot>
-		</div>
-
-	</div>
+      <transition name="fade">
+        <van-icon
+          name="arrow"
+          v-show="leftOver && isShowArrow"
+          class="items_arrow right_arrow"
+        />
+      </transition>
+      <transition name="fade">
+        <van-icon
+          name="arrow-left"
+          v-show="rightOver && isShowArrow"
+          class="items_arrow left_arrow"
+        />
+      </transition>
+    </div>
+    <div v-else>
+      <slot></slot>
+    </div>
+  </div>
 </template>
 <script>
 import ItemCardVert from '../item-card-vert/';

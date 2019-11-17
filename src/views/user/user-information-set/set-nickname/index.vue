@@ -1,18 +1,18 @@
 <template>
-	<div class="set_nickname">
-		<van-cell-group>
-			<van-field
-			v-model="nickName"
-			label="昵称"
-			:error="!!$vuelidation.error('nickName')" />
-		</van-cell-group>
+  <div class="set_nickname">
+    <van-cell-group>
+      <van-field
+        v-model="nickName"
+        label="昵称"
+        :error="!!$vuelidation.error('nickName')"
+      />
+    </van-cell-group>
 
-		<div class="bottom_btn">
-			<van-button size="large" type="danger" @click="saveNick">保存</van-button>
-		</div>
-	</div>
+    <div class="bottom_btn">
+      <van-button size="large" type="danger" @click="saveNick">保存</van-button>
+    </div>
+  </div>
 </template>
-
 
 <script>
 import { USER_PROFILE } from '@/api/user';
@@ -52,7 +52,6 @@ export default {
   }
 };
 </script>
-
 
 <style scoped>
 .bottom_btn {

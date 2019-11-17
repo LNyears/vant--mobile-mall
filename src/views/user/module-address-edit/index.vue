@@ -1,12 +1,12 @@
 <template>
-	<van-address-edit
-		style="background-color: #fff;"
-		:areaList="areaList"
-		:addressInfo="addressInfo"
-		:isSaving="isSave"
-		showPostal
-		@save="save"
-	/>
+  <van-address-edit
+    style="background-color: #fff;"
+    :areaList="areaList"
+    :addressInfo="addressInfo"
+    :isSaving="isSave"
+    showPostal
+    @save="save"
+  />
 </template>
 
 <script>

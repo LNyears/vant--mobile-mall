@@ -1,49 +1,62 @@
 <template>
-	<div class="item_cell_group">
-		<van-cell-group>
-			<van-cell title="有效期" value="2017-8-18~2018-8-19"/>
-			<van-cell title="选择规格" isLink :value="skuComb.sku_str" @click.native="skuClick" />
-			<van-cell title="文一西路花蒋路交叉口" isLink url="http://m.amap.com/navi/?dest=120.145409,30.238695&key=ab67b14d58d47912a9feb63ba862450c&destName=三潭印月"/>
-			<van-cell isLink v-if="mobile">
-				<template slot="title">
-					<a :href="'tel:' + mobile" class="store_mobile">{{mobile}}</a>
-				</template>
-			</van-cell>
-			<van-cell title="注意事项" @click.native="showPopup = true" isLink />
-		</van-cell-group>
+  <div class="item_cell_group">
+    <van-cell-group>
+      <van-cell title="有效期" value="2017-8-18~2018-8-19" />
+      <van-cell
+        title="选择规格"
+        isLink
+        :value="skuComb.sku_str"
+        @click.native="skuClick"
+      />
+      <van-cell
+        title="文一西路花蒋路交叉口"
+        isLink
+        url="http://m.amap.com/navi/?dest=120.145409,30.238695&key=ab67b14d58d47912a9feb63ba862450c&destName=三潭印月"
+      />
+      <van-cell isLink v-if="mobile">
+        <template slot="title">
+          <a :href="'tel:' + mobile" class="store_mobile">{{ mobile }}</a>
+        </template>
+      </van-cell>
+      <van-cell title="注意事项" @click.native="showPopup = true" isLink />
+    </van-cell-group>
 
-		<van-sku
-			v-model="showSku"
-			:showAddCartBtn="showAddCartBtn"
-			:buyText="buyText"
-			:sku="sku.sku"
-			:goods="sku.goods_info"
-			:goodsId="sku.goods_id"
-			:disableStepperInput="true"
-			@buy-clicked="buyGoods"
-		/>
+    <van-sku
+      v-model="showSku"
+      :showAddCartBtn="showAddCartBtn"
+      :buyText="buyText"
+      :sku="sku.sku"
+      :goods="sku.goods_info"
+      :goodsId="sku.goods_id"
+      :disableStepperInput="true"
+      @buy-clicked="buyGoods"
+    />
 
-		<van-popup v-model="showPopup"  position="bottom" lockOnScroll>
-			<div class="popup_wrap">
-				<van-icon name="clear" class="cancel_popup" @click.native="showPopup = false"></van-icon>
-				<div class="popup_header">注意事项</div>
-				<div class="popup_content">
-					<div>这里是注意事项的内容:</div>
-					<ol>
-						<li>这里是注意意事项的内容事项的内容</li>
-						<li>这里是注意事意事项的内容项的内容</li>
-						<li>这里是注意意事项的内容事项的内容</li>
-						<li>这里是注意意事项的内容事项的内容</li>
-						<li>这里是注意意事项的内容事项的内容</li>
-						<li>这里是注意事项的内容</li>
-						<li>这里是注意意事项的内容事项的内容</li>
-						<li>这里是注意意事项的内容事项的内容</li>
-						<li>这里是注意意事项的内容事项的内容</li>
-					</ol>
-				</div>
-			</div>
-		</van-popup>
-	</div>
+    <van-popup v-model="showPopup" position="bottom" lockOnScroll>
+      <div class="popup_wrap">
+        <van-icon
+          name="clear"
+          class="cancel_popup"
+          @click.native="showPopup = false"
+        ></van-icon>
+        <div class="popup_header">注意事项</div>
+        <div class="popup_content">
+          <div>这里是注意事项的内容:</div>
+          <ol>
+            <li>这里是注意意事项的内容事项的内容</li>
+            <li>这里是注意事意事项的内容项的内容</li>
+            <li>这里是注意意事项的内容事项的内容</li>
+            <li>这里是注意意事项的内容事项的内容</li>
+            <li>这里是注意意事项的内容事项的内容</li>
+            <li>这里是注意事项的内容</li>
+            <li>这里是注意意事项的内容事项的内容</li>
+            <li>这里是注意意事项的内容事项的内容</li>
+            <li>这里是注意意事项的内容事项的内容</li>
+          </ol>
+        </div>
+      </div>
+    </van-popup>
+  </div>
 </template>
 
 <script>
@@ -74,7 +87,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .popup_wrap {

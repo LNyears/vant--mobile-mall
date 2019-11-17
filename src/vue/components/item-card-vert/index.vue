@@ -1,25 +1,26 @@
 <template>
-	<div class="item_card_V_wrap" @click="OnClick">
-		<div class="item_card_image">
-			<div v-if="$slots.leftTopIcon" class="leftTopIcon">
-				<slot name="leftTopIcon"></slot>
-			</div>
+  <div class="item_card_V_wrap" @click="OnClick">
+    <div class="item_card_image">
+      <div v-if="$slots.leftTopIcon" class="leftTopIcon">
+        <slot name="leftTopIcon"></slot>
+      </div>
 
-			<div v-if="$slots.mask" class="item_img_mask">
-				<slot name="mask"></slot>
-			</div>
-			<img v-lazy="goods.pic_url">
-			<div class="item_image_desc">{{goodsStatusToMe}}</div>
-		</div>
-		<div class="item_card_name">
-			<van-tag plain type="danger" v-if="goods.is_haitao">海淘</van-tag>
-			<span v-if="$slots.icon" class="item_card_icon"><slot name="icon"></slot></span>
-			{{goods.name}}
-		</div>
-		<div class="item_card_price">{{goods.sales_price | yuan}}</div>
-	</div>
+      <div v-if="$slots.mask" class="item_img_mask">
+        <slot name="mask"></slot>
+      </div>
+      <img v-lazy="goods.pic_url" />
+      <div class="item_image_desc">{{ goodsStatusToMe }}</div>
+    </div>
+    <div class="item_card_name">
+      <van-tag plain type="danger" v-if="goods.is_haitao">海淘</van-tag>
+      <span v-if="$slots.icon" class="item_card_icon"
+        ><slot name="icon"></slot
+      ></span>
+      {{ goods.name }}
+    </div>
+    <div class="item_card_price">{{ goods.sales_price | yuan }}</div>
+  </div>
 </template>
-
 
 <script>
 import item_mix from '@/vue/mixin/item-card';

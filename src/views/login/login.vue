@@ -1,9 +1,9 @@
 <template>
-	<div class="login">
-		<login-header />
-		<login-request />
-		<login-footer />
-	</div>
+  <div class="login">
+    <login-header />
+    <login-request />
+    <login-footer />
+  </div>
 </template>
 
 <script>
@@ -19,7 +19,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .login {

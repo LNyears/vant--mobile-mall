@@ -1,25 +1,31 @@
 <template>
-	<div class="item_search">
-		<form action="/search" @submit="disabledSubmit">
-			<van-search placeholder="请输入商品名称" v-model="keyword" @search="enterSearch" autofocus/>
-		</form>
-		<div class="item_search_content">
-			<div class="item_search_text clearfix">
-				<div class="float-l">历史搜索</div>
-				<div class="float-r" @click="clearHistory">
-					<van-icon name="lajitong" style="font-size: 12px;margin-right: 3px" />
-					清空历史记录
-				</div>
-			</div>
-			<div class="item_search_history">
-				<word-tag
-					v-for="(his, i) in wordHistory"
-					:key="i"
-					@click="toSearchResult(his)"
-				>{{his}}</word-tag>
-			</div>
-		</div>
-	</div>
+  <div class="item_search">
+    <form action="/search" @submit="disabledSubmit">
+      <van-search
+        placeholder="请输入商品名称"
+        v-model="keyword"
+        @search="enterSearch"
+        autofocus
+      />
+    </form>
+    <div class="item_search_content">
+      <div class="item_search_text clearfix">
+        <div class="float-l">历史搜索</div>
+        <div class="float-r" @click="clearHistory">
+          <van-icon name="lajitong" style="font-size: 12px;margin-right: 3px" />
+          清空历史记录
+        </div>
+      </div>
+      <div class="item_search_history">
+        <word-tag
+          v-for="(his, i) in wordHistory"
+          :key="i"
+          @click="toSearchResult(his)"
+          >{{ his }}</word-tag
+        >
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -82,7 +88,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .item_search {

@@ -1,56 +1,57 @@
 <template>
-	<div>
-		<md-field-group>
-			<md-field
-				v-model="account"
-				icon="username"
+  <div>
+    <md-field-group>
+      <md-field
+        v-model="account"
+        icon="username"
         placeholder="随便输"
-				right-icon="clear-full"
+        right-icon="clear-full"
         v-validate="'required'"
         name="user"
         data-vv-as="帐号"
-				@right-click="clearText"
+        @right-click="clearText"
       />
 
-			<md-field
-				v-model="password"
-				icon="lock"
+      <md-field
+        v-model="password"
+        icon="lock"
         placeholder="随便输"
-				:type="visiblePass ? 'text' : 'password'"
-				:right-icon="visiblePass ? 'eye-open' : 'eye-close'"
+        :type="visiblePass ? 'text' : 'password'"
+        :right-icon="visiblePass ? 'eye-open' : 'eye-close'"
         v-validate="'required'"
         data-vv-as="密码"
         name="password"
-				@right-click="visiblePass = !visiblePass" 
+        @right-click="visiblePass = !visiblePass"
       />
 
-			<div class="clearfix">
-				<div class="float-r">
+      <div class="clearfix">
+        <div class="float-r">
           <router-link to="/login/forget">忘记密码</router-link>
         </div>
-			</div>
+      </div>
 
-			<van-button 
-        size="large" 
-        type="danger" 
-        :loading="isLogining" 
+      <van-button
+        size="large"
+        type="danger"
+        :loading="isLogining"
         @click="loginSubmit"
-      >登录</van-button>
-		</md-field-group>
+        >登录</van-button
+      >
+    </md-field-group>
 
-		<div class="register clearfix">
-			<div class="float-l connect">
-				<span @click="showKefu = true">联系客服</span>
-			</div>
-			<div class="float-r">
+    <div class="register clearfix">
+      <div class="float-l connect">
+        <span @click="showKefu = true">联系客服</span>
+      </div>
+      <div class="float-r">
         <router-link to="/login/registerGetCode">免费注册</router-link>
       </div>
-		</div>
+    </div>
 
-		<van-popup v-model="showKefu">
-			<md-kefu mobile="16454193338" />
-		</van-popup>
-	</div>
+    <van-popup v-model="showKefu">
+      <md-kefu mobile="16454193338" />
+    </van-popup>
+  </div>
 </template>
 
 <script>

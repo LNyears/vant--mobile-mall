@@ -1,20 +1,28 @@
 <template>
-	<md-field-group class="register_submit">
-		<md-field v-model="code" icon="mobile" placeholder="请输入验证码">
-			<div slot="rightIcon" @click="getCode" class="getCode red">
-				<countdown v-if="counting" :time="60000" @countdownend="countdownend">
-				  <template slot-scope="props">{{ +props.seconds || 60 }}秒后获取</template>
-				</countdown>
-				<span v-else>获取验证码</span>
-			</div>
-		</md-field>
-		<md-field v-model="password" icon="lock" placeholder="请输入密码"/>
-		<md-field v-model="repeatPassword" icon="lock" placeholder="请再次确认密码"/>
+  <md-field-group class="register_submit">
+    <md-field v-model="code" icon="mobile" placeholder="请输入验证码">
+      <div slot="rightIcon" @click="getCode" class="getCode red">
+        <countdown v-if="counting" :time="60000" @countdownend="countdownend">
+          <template slot-scope="props"
+            >{{ +props.seconds || 60 }}秒后获取</template
+          >
+        </countdown>
+        <span v-else>获取验证码</span>
+      </div>
+    </md-field>
+    <md-field v-model="password" icon="lock" placeholder="请输入密码" />
+    <md-field
+      v-model="repeatPassword"
+      icon="lock"
+      placeholder="请再次确认密码"
+    />
 
-		<div class="register_submit_btn">
-			<van-button type="danger" size="large" @click="registerSubmit">确定</van-button>
-		</div>
-	</md-field-group>
+    <div class="register_submit_btn">
+      <van-button type="danger" size="large" @click="registerSubmit"
+        >确定</van-button
+      >
+    </div>
+  </md-field-group>
 </template>
 
 <script>
@@ -53,7 +61,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 @import '../../../assets/scss/mixin';

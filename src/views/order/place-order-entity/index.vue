@@ -1,16 +1,16 @@
 <template>
-	<div class="place_order_entity">
-		<top-user-info style="margin-bottom: 20px;"/>
-		<bottom-goods-info />
-		<van-submit-bar
-			:price="3050"
-			label="总计："
-			buttonText="提交订单"
-			:loading="isSubmit"
-			:disabled="isDisabled"
-			@submit="onSubmit"
-		/>
-	</div>
+  <div class="place_order_entity">
+    <top-user-info style="margin-bottom: 20px;" />
+    <bottom-goods-info />
+    <van-submit-bar
+      :price="3050"
+      label="总计："
+      buttonText="提交订单"
+      :loading="isSubmit"
+      :disabled="isDisabled"
+      @submit="onSubmit"
+    />
+  </div>
 </template>
 
 <script>
@@ -40,7 +40,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .place_order_entity {

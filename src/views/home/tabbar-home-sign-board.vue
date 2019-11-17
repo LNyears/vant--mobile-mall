@@ -1,18 +1,27 @@
 <template>
-	<div class="signboard">
-		<img :src="boardUrl" :height="signboardHeight" width="100%">
-		<div class="store_opacity clearfix">
-			<div class="float-l">{{storeName}}</div>
-			<div class="float-r store_collect isCollect" @click="showCollect = true">
-				<van-icon name="shoucang-full" />
-				<span>收藏</span>
-			</div>
-		</div>
+  <div class="signboard">
+    <img :src="boardUrl" :height="signboardHeight" width="100%" />
+    <div class="store_opacity clearfix">
+      <div class="float-l">{{ storeName }}</div>
+      <div class="float-r store_collect isCollect" @click="showCollect = true">
+        <van-icon name="shoucang-full" />
+        <span>收藏</span>
+      </div>
+    </div>
 
-		<van-popup v-model="showCollect" position="top" style="background-color: transparent">
-			<img :src="showCollect && collectImg" @click="showCollect = false" width="100%" alt="右上角收藏">
-		</van-popup>
-	</div>
+    <van-popup
+      v-model="showCollect"
+      position="top"
+      style="background-color: transparent"
+    >
+      <img
+        :src="showCollect && collectImg"
+        @click="showCollect = false"
+        width="100%"
+        alt="右上角收藏"
+      />
+    </van-popup>
+  </div>
 </template>
 
 <script>

@@ -1,51 +1,50 @@
 <template>
-	<div class="user_team">
-		<van-cell-group>
-			<van-cell title="我的团队(50)">
-				<div>
-					<van-icon name="invitation" />
-					<router-link to="/user/invitation">邀请会员</router-link>
-				</div>
-			</van-cell>
-		</van-cell-group>
+  <div class="user_team">
+    <van-cell-group>
+      <van-cell title="我的团队(50)">
+        <div>
+          <van-icon name="invitation" />
+          <router-link to="/user/invitation">邀请会员</router-link>
+        </div>
+      </van-cell>
+    </van-cell-group>
 
-		<van-cell-group>
-			<van-cell>
-				<div slot="title" class="user_member">
-					<div class="user_avatar float-l">
-						<img src="../../../assets/images/avatar_default.png" alt="头像">
-					</div>
-					<div class="user_info">
-						<div>张三</div>
-						<div>一级会员</div>
-					</div>
-				</div>
-			</van-cell>
-			<van-cell>
-				<div slot="title" class="user_member">
-					<div class="user_avatar float-l">
-						<img src="../../../assets/images/avatar_default.png" alt="头像">
-					</div>
-					<div class="user_info">
-						<div>张三</div>
-						<div>一级会员</div>
-					</div>
-				</div>
-			</van-cell>
-			<van-cell>
-				<div slot="title" class="user_member">
-					<div class="user_avatar float-l">
-						<img src="../../../assets/images/avatar_default.png" alt="头像">
-					</div>
-					<div class="user_info">
-						<div>张三</div>
-						<div>一级会员</div>
-					</div>
-				</div>
-			</van-cell>
-		</van-cell-group>
-
-	</div>
+    <van-cell-group>
+      <van-cell>
+        <div slot="title" class="user_member">
+          <div class="user_avatar float-l">
+            <img src="../../../assets/images/avatar_default.png" alt="头像" />
+          </div>
+          <div class="user_info">
+            <div>张三</div>
+            <div>一级会员</div>
+          </div>
+        </div>
+      </van-cell>
+      <van-cell>
+        <div slot="title" class="user_member">
+          <div class="user_avatar float-l">
+            <img src="../../../assets/images/avatar_default.png" alt="头像" />
+          </div>
+          <div class="user_info">
+            <div>张三</div>
+            <div>一级会员</div>
+          </div>
+        </div>
+      </van-cell>
+      <van-cell>
+        <div slot="title" class="user_member">
+          <div class="user_avatar float-l">
+            <img src="../../../assets/images/avatar_default.png" alt="头像" />
+          </div>
+          <div class="user_info">
+            <div>张三</div>
+            <div>一级会员</div>
+          </div>
+        </div>
+      </van-cell>
+    </van-cell-group>
+  </div>
 </template>
 
 <script>

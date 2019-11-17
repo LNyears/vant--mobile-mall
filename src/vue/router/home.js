@@ -5,10 +5,9 @@ import asyncLoader from 'core/async-loader';
 export default [
   {
     path: '/',
-    name: 'home',
+    name: 'index',
     components: {
-      default: asyncLoader('home/tabbar-home'),
-      tabbar: Tabbar
+      default: asyncLoader('index/index')
     },
     meta: {
       keepAlive: true
@@ -18,6 +17,18 @@ export default [
     path: '*',
     redirect: {
       name: 'home'
+    }
+  },
+  {
+    // path: '/',
+    path: '/home',
+    name: 'home',
+    components: {
+      default: asyncLoader('home/tabbar-home'),
+      tabbar: Tabbar
+    },
+    meta: {
+      keepAlive: true
     }
   }
 ];

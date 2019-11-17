@@ -1,11 +1,17 @@
 <template>
-	<div class="tabbar-user">
-		<user-header :isLogin="isLogin" />
-		<order-group />
-		<ecoupon-group />
-		<user-module />
-		<van-button  size="large" class="tabbar-user__quit" v-if="isLogin" @click="quit">退出当前账户</van-button>
-	</div>
+  <div class="tabbar-user">
+    <user-header :isLogin="isLogin" />
+    <order-group />
+    <ecoupon-group />
+    <user-module />
+    <van-button
+      size="large"
+      class="tabbar-user__quit"
+      v-if="isLogin"
+      @click="quit"
+      >退出当前账户</van-button
+    >
+  </div>
 </template>
 
 <script>
@@ -53,7 +59,6 @@ export default {
   }
 };
 </script>
-
 
 <style scoped lang="scss">
 .tabbar-user {

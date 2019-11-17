@@ -1,34 +1,38 @@
 <template>
-	<div>
-		<van-cell-group>
-			<van-field
-				label="原密码"
-				v-model="password"
-				type="password"
-				placeholder="请输入原密码"
-				:error="!!$vuelidation.error('password')"/>
+  <div>
+    <van-cell-group>
+      <van-field
+        label="原密码"
+        v-model="password"
+        type="password"
+        placeholder="请输入原密码"
+        :error="!!$vuelidation.error('password')"
+      />
 
-			<van-field
-				label="新密码"
-				v-model="new_password"
-				type="password"
-				placeholder="请输入新密码"
-				:error="!!$vuelidation.error('new_password')" />
+      <van-field
+        label="新密码"
+        v-model="new_password"
+        type="password"
+        placeholder="请输入新密码"
+        :error="!!$vuelidation.error('new_password')"
+      />
 
-			<van-field
-				label="确认密码"
-				v-model="repeat_password"
-				type="password"
-				placeholder="请再次输入密码"
-				:error="!!$vuelidation.error('repeat_password')" />
-		</van-cell-group>
+      <van-field
+        label="确认密码"
+        v-model="repeat_password"
+        type="password"
+        placeholder="请再次输入密码"
+        :error="!!$vuelidation.error('repeat_password')"
+      />
+    </van-cell-group>
 
-		<div class="bottom_btn">
-			<van-button size="large" type="danger" @click="modifypassword">保存</van-button>
-		</div>
-	</div>
+    <div class="bottom_btn">
+      <van-button size="large" type="danger" @click="modifypassword"
+        >保存</van-button
+      >
+    </div>
+  </div>
 </template>
-
 
 <script>
 import { USER_MODIFY_PASSWORD, USER_LOGOUT } from '@/api/user';

@@ -1,7 +1,7 @@
 <template>
-	<span class="search_tag" @click="OnClick">
-		<slot></slot>
-	</span>
+  <span class="search_tag" @click="OnClick">
+    <slot></slot>
+  </span>
 </template>
 
 <script>

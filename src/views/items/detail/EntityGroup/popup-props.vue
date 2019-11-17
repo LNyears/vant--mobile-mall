@@ -1,18 +1,22 @@
 <template>
-	<div class="popup_wrap">
-		<van-icon name="clear" class="cancel_popup" @click.native="$parent.value = false"></van-icon>
-		<div class="popup_header">商品属性</div>
-		<div class="popup_content">
-			<van-cell-group>
-				<van-cell v-for="(str, i) in propsStr" :key="i">
-					<van-row>
-						<van-col span="8">{{str[0]}}</van-col>
-						<van-col span="16">{{str[1]}}</van-col>
-					</van-row>
-				</van-cell>
-			</van-cell-group>
-		</div>
-	</div>
+  <div class="popup_wrap">
+    <van-icon
+      name="clear"
+      class="cancel_popup"
+      @click.native="$parent.value = false"
+    ></van-icon>
+    <div class="popup_header">商品属性</div>
+    <div class="popup_content">
+      <van-cell-group>
+        <van-cell v-for="(str, i) in propsStr" :key="i">
+          <van-row>
+            <van-col span="8">{{ str[0] }}</van-col>
+            <van-col span="16">{{ str[1] }}</van-col>
+          </van-row>
+        </van-cell>
+      </van-cell-group>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -34,7 +38,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .popup_wrap {

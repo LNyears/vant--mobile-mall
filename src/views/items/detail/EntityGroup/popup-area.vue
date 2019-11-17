@@ -1,7 +1,11 @@
 <template>
-	<van-area v-once :areaList="areaList" @confirm="areaConfirm" @cancel="areaCanccel" />
+  <van-area
+    v-once
+    :areaList="areaList"
+    @confirm="areaConfirm"
+    @cancel="areaCanccel"
+  />
 </template>
-
 
 <script>
 import areaList from './area.json';

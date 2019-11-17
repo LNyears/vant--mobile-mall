@@ -1,29 +1,31 @@
 <template>
-	<div class="user_invitation">
-		<div class="invitation_wrap">
-			<div>
-				<h1>会员奖励计划</h1>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-				<p>sdsad</p>
-			</div>
-		</div>
-		<van-button class="bottom_btn" type="primary"  bottomAction>立即分享,邀请朋友</van-button>
-	</div>
+  <div class="user_invitation">
+    <div class="invitation_wrap">
+      <div>
+        <h1>会员奖励计划</h1>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+        <p>sdsad</p>
+      </div>
+    </div>
+    <van-button class="bottom_btn" type="primary" bottomAction
+      >立即分享,邀请朋友</van-button
+    >
+  </div>
 </template>
 
 <script>

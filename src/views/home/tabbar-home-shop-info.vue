@@ -11,7 +11,7 @@
     <van-cell :title="address" icon="dingwei" isLink :url="mapSrc"></van-cell>
     <van-cell icon="phone" isLink>
       <template slot="title">
-        <a :href="'tel:' + mobile" class="store_mobile">{{mobile}}</a>
+        <a :href="'tel:' + mobile" class="store_mobile">{{ mobile }}</a>
       </template>
     </van-cell>
   </van-cell-group>
@@ -41,9 +41,7 @@ export default {
 
   data() {
     const { location } = this;
-    const MAP_PATH = `http://m.amap.com/navi/?dest=${location.lat},${
-      location.lng
-    }&key=ab67b14d58d47912a9feb63ba862450c&destName=${location.name}`;
+    const MAP_PATH = `http://m.amap.com/navi/?dest=${location.lat},${location.lng}&key=ab67b14d58d47912a9feb63ba862450c&destName=${location.name}`;
     return {
       trumpet,
       mapSrc: location ? MAP_PATH : '#'
@@ -57,7 +55,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .store_mobile {

@@ -1,9 +1,9 @@
 <template>
-<div>
-  <div class="lds-ball">
-    <div></div>
+  <div>
+    <div class="lds-ball">
+      <div></div>
+    </div>
   </div>
-</div>
 </template>
 
 <script>

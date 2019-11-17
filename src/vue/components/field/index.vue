@@ -1,19 +1,18 @@
 <template>
-	<div class="md_field" :class="{md_field_hasIcon: !!icon, md_field_isError: isError}">
-		<van-icon v-if="icon" :name="icon" class="md_feld_icon"/>
-		<div class="md_field_control">
-			<input
-				:type="type"
-				v-on="listeners"
-				v-bind="$attrs"
-				:value="value">
-		</div>
-		<div>
-			<slot name="rightIcon">
-				<van-icon :name="rightIcon" @click="rightClick" v-show="value" />
-			</slot>
-		</div>
-	</div>
+  <div
+    class="md_field"
+    :class="{ md_field_hasIcon: !!icon, md_field_isError: isError }"
+  >
+    <van-icon v-if="icon" :name="icon" class="md_feld_icon" />
+    <div class="md_field_control">
+      <input :type="type" v-on="listeners" v-bind="$attrs" :value="value" />
+    </div>
+    <div>
+      <slot name="rightIcon">
+        <van-icon :name="rightIcon" @click="rightClick" v-show="value" />
+      </slot>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -49,7 +48,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 .md_field {

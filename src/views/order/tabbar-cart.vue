@@ -1,57 +1,59 @@
 <template>
   <div class="tab-cart">
-		<div class="editor_head" v-show="goods.length">
-			<van-icon :name="isEditor ? 'success' : 'editor'" />
-			<span @click="isEditor = !isEditor">{{isEditor ? '完成' : '编辑'}}</span>
-		</div>
+    <div class="editor_head" v-show="goods.length">
+      <van-icon :name="isEditor ? 'success' : 'editor'" />
+      <span @click="isEditor = !isEditor">{{
+        isEditor ? '完成' : '编辑'
+      }}</span>
+    </div>
 
     <van-checkbox-group class="card-goods" v-model="checkedGoods">
-     	<div v-for="(item, i) in goods" :key="i" class="card-goods__item">
-				<van-checkbox
-					:key="item.id"
-					:name="item.id"
-					:disabled="!item.status"
-				>
-				</van-checkbox>
+      <div v-for="(item, i) in goods" :key="i" class="card-goods__item">
+        <van-checkbox :key="item.id" :name="item.id" :disabled="!item.status">
+        </van-checkbox>
 
-				 <van-card
-					:desc="item.desc"
-					:num="item.num"
-					:thumb="item.thumb"
-				>
-					<div class="van-card__row" slot="title">
-						<div class="van-card__title"><van-tag plain type="danger">海淘</van-tag>{{item.title}}</div>
-						<div class="van-card__price">{{item.price | yuan}}</div>
-					</div>
-					<div slot="footer" v-if="isEditor">
-						 <van-stepper v-model="item.num" disableInput/>
-					</div>
-					<div slot="footer" v-else>生成日期1993-10-54</div>
-				</van-card>
+        <van-card :desc="item.desc" :num="item.num" :thumb="item.thumb">
+          <div class="van-card__row" slot="title">
+            <div class="van-card__title">
+              <van-tag plain type="danger">海淘</van-tag>{{ item.title }}
+            </div>
+            <div class="van-card__price">{{ item.price | yuan }}</div>
+          </div>
+          <div slot="footer" v-if="isEditor">
+            <van-stepper v-model="item.num" disableInput />
+          </div>
+          <div slot="footer" v-else>生成日期1993-10-54</div>
+        </van-card>
 
-				<div class="cart_delete" v-if="isEditor" @click="deleteCart(i)">删除</div>
+        <div class="cart_delete" v-if="isEditor" @click="deleteCart(i)">
+          删除
+        </div>
       </div>
     </van-checkbox-group>
 
-		<div class="clear_invalid" v-if="goods.length" @click="clearInvalid">
-			<van-icon name="lajitong"/>
-			清除失效商品
-		</div>
+    <div class="clear_invalid" v-if="goods.length" @click="clearInvalid">
+      <van-icon name="lajitong" />
+      清除失效商品
+    </div>
 
     <is-empty v-if="!goods.length">您的购物车空空如也~</is-empty>
 
     <van-submit-bar
-     	style="bottom: 50px"
+      style="bottom: 50px"
       :price="totalPrice"
       :disabled="!checkedGoods.length"
       :buttonText="submitBarText"
-			:loading="isSubmit"
+      :loading="isSubmit"
       label="总计"
       @submit="cartSubmit"
-     >
-    	<van-checkbox v-model="checkedAll" @change="setCheckAll" style="padding: 0 10px;">全选</van-checkbox>
+    >
+      <van-checkbox
+        v-model="checkedAll"
+        @change="setCheckAll"
+        style="padding: 0 10px;"
+        >全选</van-checkbox
+      >
     </van-submit-bar>
-
   </div>
 </template>
 
@@ -196,7 +198,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scoped>
 @import '../../assets/scss/mixin';

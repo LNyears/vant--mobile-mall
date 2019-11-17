@@ -1,17 +1,21 @@
 <template>
-	<div class="payment_status">
-		<div class="status_top">
-			<van-icon :name="statusIcon" :class="statusClass" />
-			<div>{{statusText}}</div>
-		</div>
+  <div class="payment_status">
+    <div class="status_top">
+      <van-icon :name="statusIcon" :class="statusClass" />
+      <div>{{ statusText }}</div>
+    </div>
 
-		<div class="status_text" v-if="isSuccess"><span class="red">3秒</span>后返回到商品详情, 您也可以查看订单详情</div>
-		<div class="status_text" v-else>系统繁忙, 支付遇到问题, 请您稍后再试!</div>
+    <div class="status_text" v-if="isSuccess">
+      <span class="red">3秒</span>后返回到商品详情, 您也可以查看订单详情
+    </div>
+    <div class="status_text" v-else>系统繁忙, 支付遇到问题, 请您稍后再试!</div>
 
-		<div class="status_goLink">
-			<router-link class="red" :to="{name: 'home'}">查看订单详情<van-icon name="arrow" /></router-link>
-		</div>
-	</div>
+    <div class="status_goLink">
+      <router-link class="red" :to="{ name: 'home' }"
+        >查看订单详情<van-icon name="arrow"
+      /></router-link>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -45,7 +49,6 @@ export default {
   }
 };
 </script>
-
 
 <style lang="scss" scopd>
 .payment_status {
