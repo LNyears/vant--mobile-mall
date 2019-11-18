@@ -19,40 +19,15 @@
                 </van-col>
             </van-row>
         </div>
-        <div class="tab">
-            <!--<van-dropdown-menu>-->
-                <!--<van-dropdown-item v-model="value1" :options="option1" />-->
-                <!--<van-dropdown-item v-model="value2" :options="option2" />-->
-                <!--<van-dropdown-item v-model="value3" :options="option3" />-->
-            <!--</van-dropdown-menu>-->
-            <van-row style="color: #bfbfbf;background-color: white;height: 45px;margin-bottom: 5px">
-                <van-col span="8" style="text-align: center">
-                    <div style="line-height: 45px;"><span>综合</span><span> <van-icon
-                            style="color: #db3d3c"
-                            name="arrow"/> </span>
-                    </div>
-                </van-col>
-                <van-col span="8" style="text-align: center">
-                    <div style="line-height: 45px;"><span>价格</span><span> <van-icon
-                            name="arrow"/></span>
-                    </div>
-                </van-col>
-                <van-col span="8" style="text-align: center">
-                    <div style="line-height: 45px;"><span>时间</span><span> <van-icon
-                            name="arrow"/></span>
-                    </div>
-                </van-col>
-            </van-row>
-            <!--<van-tabs v-model="active">-->
-                <!--<van-tab title="综合">-->
-                    <!--<div slot="nav-right">-->
-                        <!--综合-->
-                    <!--</div>-->
-                <!--</van-tab>-->
-                <!--<van-tab title="价格"></van-tab>-->
-                <!--<van-tab title="时间"></van-tab>-->
-            <!--</van-tabs>-->
-        </div>
+        <van-sticky>
+            <div class="tab" style="margin-bottom: 10px">
+                <van-dropdown-menu active-color="red">
+                    <van-dropdown-item v-model="value1" :options="option1"/>
+                    <van-dropdown-item v-model="value2" :options="option2"/>
+                    <van-dropdown-item v-model="value3" :options="option3"/>
+                </van-dropdown-menu>
+            </div>
+        </van-sticky>
         <div>
             <van-list
                     v-model="loading"
@@ -86,7 +61,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  import {Row, Col, Card, Search, List } from 'vant';
+  import {Row, Col, Card, Search, List, DropdownMenu, DropdownItem, Sticky, Icon} from 'vant';
   export default {
     components: {
       [Col.name]: Col,
@@ -94,10 +69,10 @@
       [Card.name]: Card,
       [Search.name]: Search,
       [List.name]: List,
-//      [Tab.name]: Tab,
-//      [Tabs.name]: Tabs,
-//      [DropdownMenu.name]: DropdownMenu,
-//      [DropdownItem.name]: DropdownItem,
+      [DropdownMenu.name]: DropdownMenu,
+      [DropdownItem.name]: DropdownItem,
+      [Sticky.name]: Sticky,
+      [Icon.name ]: Icon
     },
     data() {
       return {
@@ -165,21 +140,21 @@
         ],
         value1: 0,
         value2: 'a',
-        value2: 'b',
+        value3: 'b',
         option1: [
-          { text: '综合', value: 0 },
-          { text: '新款商品', value: 1 },
-          { text: '活动商品', value: 2 }
+          {text: '综合', value: 0},
+          {text: '新款商品', value: 1},
+          {text: '活动商品', value: 2}
         ],
         option2: [
-          { text: '价格', value: 'a' },
-          { text: '好评排序', value: 'b' },
-          { text: '销量排序', value: 'c' },
+          {text: '价格', value: 'a'},
+          {text: '升序', value: 'b'},
+          {text: '倒序', value: 'c'},
         ],
         option3: [
-          { text: '时间', value: 'a' },
-          { text: '好评排序', value: 'b' },
-          { text: '销量排序', value: 'c' },
+          {text: '时间', value: 'a'},
+          {text: '升序', value: 'b'},
+          {text: '倒序', value: 'c'},
         ]
       }
     },

@@ -5,6 +5,7 @@ const PlaceOrderVirtual = asyncLoader('is-user/order/place-order-virtual');
 const Payment = asyncLoader('is-user/order/payment');
 const PaymentStatus = asyncLoader('is-user/order/payment-status');
 
+const userOrderHome = asyncLoader('is-user/order/home');
 const Tabbar = () =>
   import(/* webpackChunkName: "Tabbar" */ '@/vue/components/user-tabbar/');
 
@@ -12,6 +13,14 @@ export default [
   {
     path: '/userOrder',
     name: 'userOrder',
+    meta: {
+      login: true
+    },
+    components: { default: userOrderHome, tabbar: Tabbar }
+  },
+  {
+    path: '/userOrders',
+    name: 'userOrders',
     meta: {
       login: true
     },
