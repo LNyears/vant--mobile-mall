@@ -6,7 +6,6 @@
       <van-loading
         v-if="!addressReady"
         class="address_popup_load"
-        type="circle"
         color="black"
       />
       <div v-for="(li, i) in address_list" :key="i" @click="listChoose(li)">

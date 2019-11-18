@@ -38,15 +38,15 @@
     </div>
 
     <van-goods-action>
-      <van-goods-action-mini-btn
+      <van-goods-action-icon
         @click="doContact"
         icon="wangwang"
         iconClass="red afterTag"
       />
-      <van-goods-action-mini-btn @click="toCart" icon="cart" :info="cartInfo" />
-      <van-goods-action-mini-btn @click="addCollect" icon="shoucang" />
-      <van-goods-action-big-btn @click="addCart" text="加入购物车" />
-      <van-goods-action-big-btn primary @click="doBuyNow" text="立即购买" />
+      <van-goods-action-icon @click="toCart" icon="cart" :info="cartInfo" />
+      <van-goods-action-icon @click="addCollect" icon="shoucang" />
+      <van-goods-action-button @click="addCart" text="加入购物车" />
+      <van-goods-action-button type @click="doBuyNow" text="立即购买" />
     </van-goods-action>
 
     <van-popup v-model="showContact">
@@ -62,8 +62,8 @@ import {
   Swipe,
   SwipeItem,
   GoodsAction,
-  GoodsActionBigBtn,
-  GoodsActionMiniBtn,
+  GoodsActionButton,
+  GoodsActionIcon,
   Popup
 } from 'vant';
 
@@ -158,8 +158,8 @@ export default {
     [Swipe.name]: Swipe,
     [SwipeItem.name]: SwipeItem,
     [GoodsAction.name]: GoodsAction,
-    [GoodsActionBigBtn.name]: GoodsActionBigBtn,
-    [GoodsActionMiniBtn.name]: GoodsActionMiniBtn,
+    [GoodsActionButton.name]: GoodsActionButton,
+    [GoodsActionIcon.name]: GoodsActionIcon,
     'entity-group': () =>
       import(/* webpackChunkName: "EntityGroup" */ './EntityGroup/index'),
     'virtual-group': () =>

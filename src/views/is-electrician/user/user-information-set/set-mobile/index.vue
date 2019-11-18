@@ -19,11 +19,11 @@
       <van-field
         label="验证码"
         v-model="code"
-        @click-icon="getCode"
+        @click-right-icon="getCode"
         placeholder="请输入验证码"
       >
         <span
-          slot="icon"
+          slot="right-icon"
           class="verifi_code red"
           :class="{ verifi_code_counting: counting }"
           @click="getCode"
